@@ -1,0 +1,51 @@
+{
+  "name": "batch-string",
+  "displayName": "AutoIncrementString",
+  "description": "一款多光标下自增数字字符串的插件",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:string.SelfGrowth",
+    "onCommand:string.SelfGrowthZh"
+  ],
+  "main": "./out/extension.js",
+  "icon": "images/icon.jpeg",
+  "contributes": {
+    "commands": [
+      {
+        "command": "string.SelfGrowth",
+        "title": "batch: 自增"
+      },
+      {
+        "command": "string.SelfGrowthZh",
+        "title": "batch: 中文自增"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.49.0",
+    "eslint": "^6.8.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "glob": "^7.1.6",
+    "mocha": "^7.0.1",
+    "typescript": "^3.7.5",
+    "vscode-test": "^1.3.0"
+  }
+}
